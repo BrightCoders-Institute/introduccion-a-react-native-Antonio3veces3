@@ -1,15 +1,20 @@
 import React from 'react'
-import { View, FlatList, Text } from 'react-native';
-import {PetListProps, Pet} from '../Types/PetTypes'
+import {FlatList, Text, ScrollView } from 'react-native';
+import { Pet} from '../Types/PetTypes'
+import PetItem from './PetItem';
 
-function PetList(props: PetListProps): JSX.Element {
+type PetList= {
+  list: Array<Pet>
+}
+
+function PetList(props: PetList): JSX.Element {
   return (
-    <View>
+    <ScrollView>
         <FlatList 
             data={props.list}
-            renderItem={(item)=> <Text>{item.item.name}</Text>}
+            renderItem={(item)=> <PetItem pet={item.item} key={item.index} />}
         />
-    </View>
+    </ScrollView>
   )
 }
 
