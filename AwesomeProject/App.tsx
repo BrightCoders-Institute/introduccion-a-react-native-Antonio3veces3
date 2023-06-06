@@ -13,6 +13,7 @@ import {
   StyleSheet,
   Pressable,
   Image,
+  Alert,
 } from 'react-native';
 import PetList from './components/PetList';
 const Pets = [
@@ -25,6 +26,54 @@ const Pets = [
   {
     name: 'Simba',
     birth: 2022,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
+    owner: 'Antonio Ramirez',
+    img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  },
+  {
+    name: 'Pirata',
+    birth: 2016,
     owner: 'Antonio Ramirez',
     img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
   },
@@ -47,7 +96,9 @@ function App(): JSX.Element {
         />
       </View>
 
-      <Pressable style={style.button}>
+      <Pressable style={style.button}
+        onPress={()=>{Alert.alert("Create new pet", "Form to create pet")}}
+      >
         <Text style={style.btnText}>Add new pet</Text>
       </Pressable>
 
@@ -88,7 +139,9 @@ const style = StyleSheet.create({
   },
   containerList:{
     alignContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 10,
+    height: '72%'
   }
 });
 
