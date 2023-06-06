@@ -16,8 +16,10 @@ function PetItem(props: props) : JSX.Element{
         source={require('../img/perro.jpg')}
       />
       </View>
-      <View>
-        <Text>{props.pet.name}</Text>
+      <View style= {style.textContainer}>
+        <Text style={style.petName}>{props.pet.name}</Text>
+        <Text style={style.birth}>Brith: {props.pet.birth}</Text>
+        <Text style={style.owner}>Owner: {props.pet.owner}</Text>
       </View>
     </View>
   )
@@ -26,27 +28,36 @@ function PetItem(props: props) : JSX.Element{
 const style= StyleSheet.create({
   container: {
     height: 100,
-    borderStyle: 'solid',
-    borderColor: 'black',
-    borderWidth: 1,
-    marginTop: 10,
+    marginTop: 15,
     borderRadius: 6,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    backgroundColor: "#E7EBEF",
+    alignItems: 'center',
+    
   },
   containerImg: {
-    borderStyle: 'solid',
-    borderColor: 'black',
-    borderWidth: 1,
-    width: 130,
-    alignItems: 'center',
-    justifyContent: 'center'
+    marginLeft: 20,
   },
   img: {
     width: 90,
     height: 90,
     borderRadius: 50,
-    
   },
+  textContainer:{
+    marginLeft: 20,
+  },
+  petName: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#365940',
+  },
+  birth: { 
+    fontSize: 16,
+  },
+  owner: {
+    marginTop: 3,
+    fontSize: 16,
+  }
 });
 
 export default PetItem

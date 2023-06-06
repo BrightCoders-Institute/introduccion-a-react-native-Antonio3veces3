@@ -8,31 +8,30 @@
 import React, {useState} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  Button,
   View,
   Text,
   StyleSheet,
   Pressable,
+  Image,
 } from 'react-native';
 import PetList from './components/PetList';
 const Pets = [
   {
     name: 'Bailey',
     birth: 2018,
-    owner: 'Tony',
+    owner: 'Antonio Ramirez',
     img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'  
   },
   {
     name: 'Simba',
     birth: 2022,
-    owner: 'Tony',
+    owner: 'Antonio Ramirez',
     img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
   },
   {
     name: 'Pirata',
     birth: 2016,
-    owner: 'Tony',
+    owner: 'Antonio Ramirez',
     img: 'https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
   },
 ];
@@ -41,13 +40,20 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={style.container}>
-      <Text style={style.title}>Veterinary</Text>
+      <View>
+        <Image 
+        style= {style.logoImg}
+          source={require('./img/logo_veterinary.svg.png')}
+        />
+      </View>
 
       <Pressable style={style.button}>
         <Text style={style.btnText}>Add new pet</Text>
       </Pressable>
 
+      <View style={style.containerList}>
       <PetList list={petList} />
+      </View>
     </SafeAreaView>
   );
 }
@@ -56,11 +62,11 @@ const style = StyleSheet.create({
   container: {
     padding: 10,
   },
-  title: {
-    fontSize: 25,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: '#34987A',
+  logoImg: {
+    width: 140,
+    height:140,
+    borderRadius:50,
+    alignSelf: 'center'
   },
   button: {
     alignSelf: 'center',
@@ -80,6 +86,10 @@ const style = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
+  containerList:{
+    alignContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 export default App;
